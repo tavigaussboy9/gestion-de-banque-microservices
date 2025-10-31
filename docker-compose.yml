@@ -29,7 +29,7 @@ services:
     environment:
       - NODE_ENV=production
   rabbitmq:
-    image: 'rabbitmq:3-management'
+    image: 'rabbitmq:latest'
     ports:
       - '15672:15672'
       - '5672:5672'
