@@ -9,7 +9,7 @@ services:
     build:
       context: ./account-service
     ports:
-      - '3002:3000'
+      - '3002:3002'
   transaction-service:
     build:
       context: ./transaction-service
