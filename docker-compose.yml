@@ -7,7 +7,7 @@ services:
       - '3001:3001'
     environment:
       - NODE_ENV=production
-    restart: always
+    restart: unless-stopped
   account-service:
     build:
       context: ./account-service
@@ -15,7 +15,7 @@ services:
       - '3002:3002'
     environment:
       - NODE_ENV=production
-    restart: always
+    restart: unless-stopped
   transaction-service:
     build:
       context: ./transaction-service
@@ -23,7 +23,7 @@ services:
       - '3003:3003'
     environment:
       - NODE_ENV=production
-    restart: always
+    restart: unless-stopped
   notification-service:
     build:
       context: ./notification-service
@@ -31,10 +31,10 @@ services:
       - '3004:3004'
     environment:
       - NODE_ENV=production
-    restart: always
+    restart: unless-stopped
   rabbitmq:
     image: 'rabbitmq:latest'
     ports:
       - '15672:15672'
       - '5672:5672'
-    restart: always
+    restart: unless-stopped
