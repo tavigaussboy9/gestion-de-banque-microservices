@@ -1,0 +1,27 @@
+version: '3'
+services:
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - '3001:3000'
+  account-service:
+    build:
+      context: ./account-service
+    ports:
+      - '3002:3000'
+  transaction-service:
+    build:
+      context: ./transaction-service
+    ports:
+      - '3003:3000'
+  notification-service:
+    build:
+      context: ./notification-service
+    ports:
+      - '3004:3000'
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - '15672:15672'
+      - '5672:5672'
