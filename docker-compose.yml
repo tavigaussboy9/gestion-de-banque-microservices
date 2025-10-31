@@ -5,21 +5,29 @@ services:
       context: ./user-service
     ports:
       - '3001:3001'
+    environment:
+      - NODE_ENV=production
   account-service:
     build:
       context: ./account-service
     ports:
       - '3002:3002'
+    environment:
+      - NODE_ENV=production
   transaction-service:
     build:
       context: ./transaction-service
     ports:
       - '3003:3003'
+    environment:
+      - NODE_ENV=production
   notification-service:
     build:
       context: ./notification-service
     ports:
       - '3004:3004'
+    environment:
+      - NODE_ENV=production
   rabbitmq:
     image: 'rabbitmq:3-management'
     ports:
