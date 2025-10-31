@@ -14,12 +14,12 @@ services:
     build:
       context: ./transaction-service
     ports:
-      - '3003:3000'
+      - '3003:3003'
   notification-service:
     build:
       context: ./notification-service
     ports:
-      - '3004:3000'
+      - '3004:3004'
   rabbitmq:
     image: 'rabbitmq:3-management'
     ports:
